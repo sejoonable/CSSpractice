@@ -8,9 +8,20 @@ const LargePrimaryButton = styled.button`
   border: 3px solid ${props => props.bordercolor};
   background-color: white;
   border-radius: 5px;
+  width: 170px;
+  height: 50px;
   &:hover{
     background-color: ${props => props.bordercolor};
   }
+`
+
+const SimpleButton = styled.button`
+  background-color: ${props => props.backgroundcolor};
+  border: none;
+  border-radius: 5px;
+  width: ${props => props.width};
+  height: ${props => props.height};
+
 `
 
 
@@ -27,18 +38,51 @@ function App() {
   }
 
   return (
-    <div>
-      <LargePrimaryButton
-        bordercolor="green"
-        onClick={() => { alert("버튼을 만들어보세요") }}>
-        LargePrimaryButton
-      </LargePrimaryButton>
+    <>
+      <div>
+        <LargePrimaryButton
+          bordercolor="green"
+          onClick={() => { alert("버튼을 만들어보세요") }}>
+          LargePrimaryButton
+        </LargePrimaryButton>
 
-      <LargePrimaryButton
-        bordercolor="pink"
-        onClick={() => { alert("버튼을 만들어보세요") }}>
-        LargeNegativeButton
-      </LargePrimaryButton>
+        <SimpleButton
+          width="135px"
+          height="45px"
+          backgroundcolor="green"
+        >Medium
+        </SimpleButton>
+
+        <SimpleButton
+          width="125px"
+          height="35px"
+          backgroundcolor="green"
+          >Small
+        </SimpleButton>
+      </div>
+
+      <div>
+        <LargePrimaryButton
+          bordercolor="pink"
+          onClick={() => { prompt("어렵나요?") }}>
+          LargeNegativeButton
+        </LargePrimaryButton>
+
+        <SimpleButton
+          width="135px"
+          height="45px"
+          backgroundcolor="pink"
+        >Medium
+        </SimpleButton>
+
+        <SimpleButton
+          width="125px"
+          height="35px"
+          backgroundcolor="pink"
+          >Small
+        </SimpleButton>
+      </div>
+
 
       <div>
         <button onClick={() => { setmodal1(!modal1) }}>open modal</button>
@@ -52,7 +96,7 @@ function App() {
           <Modal2 closemodal2={closemodal2} />
         }
       </div>
-    </div>
+    </>
   )
 }
 
