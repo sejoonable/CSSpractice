@@ -1,7 +1,18 @@
 import React from 'react'
 import { useState } from 'react'
+import styled from 'styled-components'
 import Modal from './Modal'
 import Modal2 from './Modal2'
+
+const LargePrimaryButton = styled.button`
+  border: 3px solid ${props => props.bordercolor};
+  background-color: white;
+  border-radius: 5px;
+  &:hover{
+    background-color: ${props => props.bordercolor};
+  }
+`
+
 
 function App() {
   const [modal1, setmodal1] = useState(false)
@@ -17,6 +28,18 @@ function App() {
 
   return (
     <div>
+      <LargePrimaryButton
+        bordercolor="green"
+        onClick={() => { alert("버튼을 만들어보세요") }}>
+        LargePrimaryButton
+      </LargePrimaryButton>
+
+      <LargePrimaryButton
+        bordercolor="pink"
+        onClick={() => { alert("버튼을 만들어보세요") }}>
+        LargeNegativeButton
+      </LargePrimaryButton>
+
       <div>
         <button onClick={() => { setmodal1(!modal1) }}>open modal</button>
         {modal1 &&
@@ -29,9 +52,6 @@ function App() {
           <Modal2 closemodal2={closemodal2} />
         }
       </div>
-
-
-
     </div>
   )
 }

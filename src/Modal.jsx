@@ -40,25 +40,24 @@ const ModalButton = styled.button`
 `
 
 
-function Modal({closemodal1}) {
-
+function Modal({ closemodal1 }) {
 
   return (<>
     <div>
       <ModalBackground>
         <ModalBody onClick={event => event.stopPropagation()}>
           <span>닫기와 확인 버튼 2개가 있고, 외부 영역을 눌러도 모달이 닫히지 않아요.</span>
-            <ModalButton 
-              backgroundColor='pink'
-              rightposition='20px'
-              onClick={closemodal1}>
-                닫기
-            </ModalButton>
-            <ModalButton 
-              backgroundColor='green'
-              rightposition='130px'>
-                확인
-            </ModalButton>
+          <ModalButton
+            backgroundColor='pink'
+            rightposition='20px'
+            onClick={closemodal1}>
+            닫기
+          </ModalButton>
+          <ModalButton
+            backgroundColor='green'
+            rightposition='130px'>
+            확인
+          </ModalButton>
         </ModalBody>
       </ModalBackground>
     </div>
